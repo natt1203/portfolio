@@ -559,7 +559,7 @@ footer {
         left: 0;
     }
 
-    .nav-link {
+    .nav-link, .btn-primary {
         margin: 1rem 0;
         padding: 1rem;
     }
@@ -584,4 +584,12 @@ footer {
     .contact-content {
         flex-direction: column;
     }
+}
+
+.menu-acessibilidade {
+    margin: 10px;
+}
+
+.opcoes-acessibilidade {
+    display: none;
 }

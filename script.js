@@ -213,17 +213,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         }, 1500);
     });
-});
-const botaoDeAcesssibilidade = document.getElementById('botao-acessibilidade');
+    const botaoDeAcesssibilidade = document.getElementById('botao-acessibilidade');
     const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
 
-    botaoDeAcessibilidade.AddEventListener('click', function () {
-        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-        opcoesDeacessibilidade.classList.toggle('apresenta-lista')
-    })  
+    opcoesDeAcessibilidade.addEventListener('click', function () {
+        botaoDeAcesssibilidade.classList.toggle('rotacao-botao');
+        opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
+    });
+
     const aumentaFonteBotao = document.getElementById('aumentar-fonte');
     const diminuiFonteBotao = document.getElementById('diminuir-fonte');
 
+    botaoDeAcesssibilidade.addEventListener('click', function () {
+        if (opcoesDeAcessibilidade.style.display == 'none') {
+            opcoesDeAcessibilidade.style.display = 'block';
+        } else {
+            opcoesDeAcessibilidade.style.display = 'none';
+        };
+    });
+    
     let tamanhoAtualFonte = 1;
 
     aumentaFonteBotao.addEventListener('click', function () {
@@ -237,3 +245,4 @@ const botaoDeAcesssibilidade = document.getElementById('botao-acessibilidade');
         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
 
     })
+});
